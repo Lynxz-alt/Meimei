@@ -14,185 +14,176 @@ st.set_page_config(
 # ─── CUSTOM CSS ────────────────────────────────────────────────────────────────
 st.markdown("""
 <style>
-  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Quicksand:wght@400;600;700&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=Nunito:wght@400;600;700&display=swap');
+
+  /* ── Design tokens ──
+     Background : #fff8fa  (off-white, sangat terang, tidak menyilaukan)
+     Card       : #ffffff  (putih solid)
+     Accent     : #d63384  (pink gelap — kontras ≥ 4.5:1 di atas putih)
+     Accent-2   : #b5005b  (lebih gelap, untuk hover & heading)
+     Body text  : #2d1b28  (hampir hitam, cokelat tua)
+     Muted text : #6d4a60  (abu-abu ungu — masih kontras)
+     Border     : #f0c6d8  (pink muda, netral)
+  */
 
   html, body, [class*="css"] {
-    font-family: 'Quicksand', sans-serif;
-    background: #fff0f6;
+    font-family: 'Nunito', sans-serif;
+    color: #2d1b28;
   }
 
-  /* Animated pastel gradient background */
   .stApp {
-    background: linear-gradient(135deg, #ffdde1 0%, #fff0f5 30%, #e8f4fd 60%, #f3e5f5 100%);
-    background-size: 400% 400%;
-    animation: gradientShift 8s ease infinite;
+    background-color: #fff8fa;
   }
 
-  @keyframes gradientShift {
-    0%   { background-position: 0% 50%; }
-    50%  { background-position: 100% 50%; }
-    100% { background-position: 0% 50%; }
-  }
-
-  /* Floating hearts animation */
-  @keyframes floatUp {
-    0%   { transform: translateY(0) scale(1); opacity: 1; }
-    100% { transform: translateY(-120px) scale(1.5); opacity: 0; }
-  }
-
-  /* Hero title */
+  /* ── Hero ── */
   .hero-title {
     font-family: 'Playfair Display', serif;
-    font-size: 3.2em;
+    font-size: 3em;
     font-weight: 700;
-    color: #c2185b;
+    color: #b5005b;          /* gelap, kontras di #fff8fa */
     text-align: center;
     line-height: 1.2;
-    text-shadow: 2px 4px 15px rgba(194,24,91,0.15);
-    margin-bottom: 0;
+    margin-bottom: 0.1em;
   }
 
   .hero-subtitle {
-    font-family: 'Playfair Display', serif;
-    font-style: italic;
-    font-size: 1.5em;
-    color: #e91e8c;
+    font-family: 'Nunito', sans-serif;
+    font-size: 1.2em;
+    font-weight: 600;
+    color: #6d4a60;           /* muted, tapi masih terbaca */
     text-align: center;
     margin-top: 0;
     margin-bottom: 1.5em;
   }
 
-  /* Card style */
+  /* ── Card ── */
   .cute-card {
-    background: rgba(255,255,255,0.75);
-    backdrop-filter: blur(12px);
-    border-radius: 24px;
+    background: #ffffff;
+    border-radius: 20px;
     padding: 2em 2.5em;
     margin: 1.2em 0;
-    border: 1.5px solid rgba(255, 182, 193, 0.5);
-    box-shadow: 0 8px 32px rgba(194,24,91,0.08);
-    transition: transform 0.3s ease;
+    border: 1.5px solid #f0c6d8;
+    box-shadow: 0 4px 20px rgba(182, 0, 91, 0.07);
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
   }
 
   .cute-card:hover {
-    transform: translateY(-4px);
+    transform: translateY(-3px);
+    box-shadow: 0 8px 28px rgba(182,0,91,0.12);
   }
 
   .section-title {
     font-family: 'Playfair Display', serif;
-    font-size: 1.6em;
-    color: #ad1457;
-    margin-bottom: 0.5em;
+    font-size: 1.5em;
+    font-weight: 700;
+    color: #b5005b;
+    margin-bottom: 0.6em;
     text-align: center;
   }
 
-  /* Wish cards */
+  /* ── Wish items ── */
   .wish-item {
-    background: linear-gradient(135deg, #fff9fc, #fce4ec);
-    border-left: 4px solid #f48fb1;
-    border-radius: 12px;
-    padding: 0.9em 1.2em;
-    margin: 0.6em 0;
-    font-size: 1.05em;
-    color: #880e4f;
-    box-shadow: 0 4px 12px rgba(244,143,177,0.15);
+    background: #fff0f6;
+    border-left: 4px solid #d63384;
+    border-radius: 10px;
+    padding: 0.85em 1.2em;
+    margin: 0.55em 0;
+    font-size: 1em;
+    color: #2d1b28;           /* teks gelap di background terang */
+    font-weight: 600;
   }
 
-  /* Confetti emoji rain */
+  /* ── Confetti bar ── */
   .confetti-bar {
-    font-size: 2em;
+    font-size: 1.9em;
     text-align: center;
     letter-spacing: 0.3em;
-    animation: bounce 1s infinite alternate;
+    animation: bounce 1.2s ease-in-out infinite alternate;
   }
 
   @keyframes bounce {
     from { transform: translateY(0); }
-    to   { transform: translateY(-10px); }
+    to   { transform: translateY(-8px); }
   }
 
-  /* Cake animation */
+  /* ── Cake ── */
   .cake-emoji {
     font-size: 5em;
     display: block;
     text-align: center;
-    animation: wiggle 2s ease-in-out infinite;
+    animation: wiggle 2.2s ease-in-out infinite;
   }
 
   @keyframes wiggle {
-    0%, 100% { transform: rotate(-5deg) scale(1); }
-    50%       { transform: rotate(5deg) scale(1.1); }
+    0%, 100% { transform: rotate(-4deg) scale(1); }
+    50%       { transform: rotate(4deg) scale(1.08); }
   }
 
-  /* Buttons override */
-  .stButton > button {
-    background: linear-gradient(135deg, #f48fb1, #e91e8c);
-    color: white;
-    border: none;
-    border-radius: 50px;
-    padding: 0.6em 2.5em;
-    font-family: 'Quicksand', sans-serif;
-    font-weight: 700;
-    font-size: 1.05em;
-    transition: all 0.3s ease;
-    box-shadow: 0 4px 15px rgba(233,30,140,0.3);
-    cursor: pointer;
-  }
-
-  .stButton > button:hover {
-    background: linear-gradient(135deg, #e91e8c, #ad1457);
-    transform: scale(1.05);
-    box-shadow: 0 6px 20px rgba(233,30,140,0.4);
-  }
-
-  /* Slider */
-  .stSlider [data-baseweb=slider] {
-    accent-color: #e91e8c;
-  }
-
-  /* Radio */
-  .stRadio label { color: #880e4f !important; font-weight: 600; }
-
-  /* Text area */
-  .stTextArea textarea {
-    border-radius: 16px !important;
-    border: 1.5px solid #f48fb1 !important;
-    font-family: 'Quicksand', sans-serif !important;
-  }
-
-  /* Metric */
-  [data-testid="metric-container"] {
-    background: rgba(255,255,255,0.7);
-    border-radius: 16px;
-    padding: 0.8em;
-    border: 1px solid #f8bbd0;
-    text-align: center;
-  }
-
-  .footer-text {
-    text-align: center;
-    color: #ad1457;
-    font-size: 0.95em;
-    margin-top: 2em;
-    opacity: 0.7;
-  }
-
-  /* Birthday counter */
+  /* ── Birthday counter strip ── */
   .bday-counter {
     font-size: 1.3em;
     text-align: center;
-    color: #c2185b;
+    color: #2d1b28;
     font-weight: 700;
-    padding: 0.5em;
-    background: rgba(255,182,193,0.3);
+    padding: 0.5em 1em;
+    background: #fce4ef;
     border-radius: 50px;
     margin: 0.5em 0;
+    border: 1px solid #f0c6d8;
   }
 
-  /* Scrollbar */
+  /* ── Buttons ── */
+  .stButton > button {
+    background: #d63384;
+    color: #ffffff !important;
+    border: none;
+    border-radius: 50px;
+    padding: 0.55em 2.4em;
+    font-family: 'Nunito', sans-serif;
+    font-weight: 700;
+    font-size: 1em;
+    transition: background 0.2s ease, transform 0.2s ease, box-shadow 0.2s ease;
+    box-shadow: 0 3px 12px rgba(214,51,132,0.28);
+  }
+
+  .stButton > button:hover {
+    background: #b5005b !important;
+    transform: scale(1.04);
+    box-shadow: 0 5px 18px rgba(181,0,91,0.35);
+  }
+
+  /* ── Radio labels ── */
+  .stRadio label {
+    color: #2d1b28 !important;
+    font-weight: 600;
+    font-family: 'Nunito', sans-serif !important;
+  }
+
+  /* ── Slider label ── */
+  .stSlider label, .stSelectSlider label {
+    color: #2d1b28 !important;
+    font-weight: 600;
+  }
+
+  /* ── Text area ── */
+  .stTextArea label { color: #2d1b28 !important; font-weight: 600; }
+  .stTextArea textarea {
+    border-radius: 14px !important;
+    border: 1.5px solid #d63384 !important;
+    font-family: 'Nunito', sans-serif !important;
+    color: #2d1b28 !important;
+    background: #fff8fa !important;
+  }
+
+  /* ── Streamlit default text (labels, captions) ── */
+  label, p, .stMarkdown p {
+    color: #2d1b28;
+  }
+
+  /* ── Scrollbar ── */
   ::-webkit-scrollbar { width: 6px; }
   ::-webkit-scrollbar-track { background: #fff0f6; }
-  ::-webkit-scrollbar-thumb { background: #f48fb1; border-radius: 3px; }
+  ::-webkit-scrollbar-thumb { background: #d63384; border-radius: 3px; }
 </style>
 """, unsafe_allow_html=True)
 
