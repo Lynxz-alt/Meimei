@@ -218,7 +218,7 @@ def random_color_heart():
 st.markdown('<div class="confetti-bar">🎊 🎈 🎉 🎂 🎉 🎈 🎊</div>', unsafe_allow_html=True)
 
 st.markdown('<p class="hero-title">Happy Birthday,<br>Clarissa 🌸</p>', unsafe_allow_html=True)
-st.markdown('<p class="hero-subtitle">"Meimie" yang selalu ada di hati kak 💖</p>', unsafe_allow_html=True)
+st.markdown('<p class="hero-subtitle">"Meimie" yang selalu ada di hati koko 💖</p>', unsafe_allow_html=True)
 
 st.markdown('<span class="cake-emoji">🎂</span>', unsafe_allow_html=True)
 
@@ -263,14 +263,14 @@ st.markdown('</div>', unsafe_allow_html=True)
 
 # ─── SECTION 2: KATA-KATA MANIS ────────────────────────────────────────────────
 st.markdown('<div class="cute-card">', unsafe_allow_html=True)
-st.markdown('<p class="section-title">💌 Pesan dari Kak untuk Meimie</p>', unsafe_allow_html=True)
+st.markdown('<p class="section-title">💌 Pesan dari koko untuk Meimie</p>', unsafe_allow_html=True)
 
 wishes = [
     "🌸 Meimie, kamu itu bukan sekadar adek — kamu permata yang bikin hari-hari lebih berwarna!",
     "💖 Di hari spesialmu ini, semoga semua impian dan harapan kamu jadi kenyataan yang indah.",
-    "🦋 Kamu tumbuh jadi wanita luar biasa, dan kak bangga banget punya adek kayak kamu.",
+    "🦋 Kamu tumbuh jadi wanita luar biasa, dan koko bangga banget punya adek kayak kamu.",
     "🌺 Semoga tahun ini penuh kebahagiaan, kesuksesan, dan hal-hal manis yang kamu layak dapatkan.",
-    "✨ Jaga kesehatan ya, Meimie! Kak selalu doain yang terbaik untuk Clarissa kita yang satu ini.",
+    "✨ Jaga kesehatan ya, Meimie! Koko selalu doain yang terbaik untuk Clarissa kita yang satu ini.",
     "🎀 Senyummu itu menular banget — jangan pernah berhenti senyum ya!",
     "🍰 Selamat ulang tahun, Meimie tersayang! Love you to the moon and back! 🌙",
 ]
@@ -283,9 +283,9 @@ st.markdown('</div>', unsafe_allow_html=True)
 
 # ─── SECTION 3: LOVE METER ─────────────────────────────────────────────────────
 st.markdown('<div class="cute-card">', unsafe_allow_html=True)
-st.markdown('<p class="section-title">💕 Sayang-O-Meter Kak ke Meimie</p>', unsafe_allow_html=True)
+st.markdown('<p class="section-title">💕 Sayang-O-Meter Koko ke Meimie</p>', unsafe_allow_html=True)
 
-st.markdown("<p style='text-align:center; color:#880e4f;'>Tekan tombol buat ngukur rasa sayang kak! 😄</p>", unsafe_allow_html=True)
+st.markdown("<p style='text-align:center; color:#880e4f;'>Tekan tombol buat ngukur rasa sayang Koko! 😄</p>", unsafe_allow_html=True)
 
 col1, col2, col3 = st.columns([1, 2, 1])
 with col2:
@@ -302,7 +302,7 @@ if st.session_state.love_meter > 0:
         101% — MELEBIHI BATAS MAKSIMAL! 🚀
       </div>
       <div style='color:#c2185b; margin-top:0.8em; font-size:1.1em;'>
-        Rasa sayang kak ke Meimie terlalu besar sampai alat ukurnya error! 😂💕
+        Rasa sayang koko ke Meimie terlalu besar sampai alat ukurnya error! 😂💕
       </div>
     </div>
     """, unsafe_allow_html=True)
@@ -432,13 +432,13 @@ st.markdown(f"""
   <div style='color:#880e4f; font-size:1.05em; line-height:1.7; max-width:400px; margin:0 auto;'>
     Setiap hari bersamamu adalah hadiah.<br>
     Terima kasih sudah jadi adek yang luar biasa.<br>
-    Kak sayang kamu setulus-tulusnya. 🌙
+    Koko sayang kamu setulus-tulusnya. 🌙
   </div>
   <div style='margin-top:1.5em; font-size:1.8em;'>
     🎉 🎈 🍰 🎊 🎁 🎈 🎉
   </div>
   <div style='margin-top:1em; color:#c2185b; font-weight:700; font-size:0.9em;'>
-    — Dari Kak yang selalu sayang Meimie 💕
+    — Dari Koko yang selalu sayang Meimie 💕
   </div>
 </div>
 """, unsafe_allow_html=True)
