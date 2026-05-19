@@ -474,7 +474,7 @@ st.markdown('</div>', unsafe_allow_html=True)
 now = datetime.now()
 st.markdown(f"""
 <div style='text-align:center; margin:1.5em 0; color:#c2185b; font-size:0.9em; opacity:0.75;'>
-  🕐 Hari ini: {now.strftime("%d %B %Y, %H:%M")} WIB — Hari paling spesial! 🌟
+  🕐 Hari ini — Hari paling spesial! 🌟
 </div>
 """, unsafe_allow_html=True)
 
